@@ -48,7 +48,7 @@ let selectedIngredients = []
   ];
 
   const handleClick = selectedCoffee => {
-    selectedIngredients = selectedCoffee.ingredients || []
+    selectedIngredients = selectedCoffee.ingredients || [];
   }
   
 </script>
