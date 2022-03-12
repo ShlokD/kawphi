@@ -1,32 +1,49 @@
 <script>
+import Americano from "../../src/assets/icons/Americano.svg";
+import Corretto from "../../src/assets/icons/Corretto.svg";
+import Espresso from "../../src/assets/icons/Espresso.svg";
+import EspressoRomano from "../../src/assets/icons/EspressoRomano.svg";
+import Galao from "../../src/assets/icons/Galao.svg";
+import Latte from "../../src/assets/icons/Latte.svg";
+import Lungo from "../../src/assets/icons/Lungo.svg";
+import Macchiato from "../../src/assets/icons/Macchiato.svg";
+
+
 let selectedIngredients = []
   let coffees = [{
     name: "Americano",
-    ingredients: ["Water", "Coffee"]
+    ingredients: ["Water", "Coffee"],
+    image: Americano
   }, {
     name: "Corretto",
-    ingredients: ["Brandy", "Coffee"]
+    ingredients: ["Brandy", "Coffee"],
+    image: Corretto
   },
   {
     name: "Espresso",
-    ingredients: ["Coffee"]
+    ingredients: ["Coffee"],
+    image: Espresso
   },
   {
-    name: "EspressoRomano",
-    title: "Espresso Romano",
-    ingredients: ["Lemon", "Coffee"]
+    name: "Espresso Romano",
+    ingredients: ["Lemon", "Coffee"],
+    image: EspressoRomano
   },{
     name: "Galao",
-    ingredients: ["Foam", "Milk", "Milk", "Coffee"]
+    ingredients: ["Foam", "Milk", "Milk", "Coffee"],
+    image: Galao
   },{
     name: "Latte",
-    ingredients: ["Foam", "Milk", "Coffee"]
+    ingredients: ["Foam", "Milk", "Coffee"],
+    image: Latte
   },{
     name: "Lungo",
-    ingredients: ["Coffee", "Coffee"]
+    ingredients: ["Coffee", "Coffee"],
+    image: Lungo
   },{
     name: "Macchiato",
-    ingredients: ["Foam", "Coffee"]
+    ingredients: ["Foam", "Coffee"],
+    image: Macchiato
   },
   ];
 
@@ -46,9 +63,9 @@ let selectedIngredients = []
 {#each coffees as coffee}
 <div class="w-50 w-25-ns tc pa2">
 <button class="bw0 bg-transparent" on:click={() => handleClick(coffee)}>
-<img alt={coffee.title || coffee.name} src={`/src/assets/icons/${coffee.name}.svg`} />
+<img alt={coffee.name} src={coffee.image} />
 </button>
-<p class="f4 f2-ns">{coffee.title || coffee.name}</p>
+<p class="f4 f2-ns">{coffee.name}</p>
 </div>
 {/each}
 </div>
